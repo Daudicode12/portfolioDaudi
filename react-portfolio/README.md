@@ -42,6 +42,22 @@ cp public/images/developer.png react-portfolio/public/images/
 - The project uses the Font Awesome CDN for icons (included in `index.html`).
 - If you prefer to keep a single site root instead of a new folder, I can move files into place or set up the React app at the repository root.
 
+Projects
+
+- I added three project cards to the Projects page that point to your repositories:
+  - blood-donation-with-next.js — https://github.com/Daudicode12/blood-donation-with-next.js.git
+  - healthSocial — https://github.com/Daudicode12/healthSocial.git
+  - foundationWeb — https://github.com/Daudicode12/foundationWeb.git
+
+- Images are temporary placeholders sourced from Unsplash. Replace them later by editing `src/pages/Projects.jsx` and updating the `img` URLs or by copying screenshots into `react-portfolio/public/images` and pointing the src to `/images/...`.
+
+Data & live repo metadata
+
+- The Projects list is now stored in `src/data/projects.js` to make adding/removing projects easier.
+- The Projects page attempts to fetch lightweight metadata (stars and the repo description) from the GitHub API on page load. This fetch is unauthenticated and subject to GitHub's rate limits (typically 60 requests/hour per IP). If the API call fails or is rate-limited, the page will continue to show the placeholder description from the data file.
+
+To change the project images or add more projects, edit `src/data/projects.js`.
+
 CI / Deploy
 
 - I added a GitHub Actions workflow at `.github/workflows/ci.yml` (build + test) and `.github/workflows/pages.yml` (build + deploy to GitHub Pages). The deploy workflow uses the GitHub Pages actions and will publish the `react-portfolio/dist` folder when you push to the `main` branch.
