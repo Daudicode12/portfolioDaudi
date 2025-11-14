@@ -58,6 +58,35 @@ Data & live repo metadata
 
 To change the project images or add more projects, edit `src/data/projects.js`.
 
+README summaries, authenticated requests & demo links
+
+- The Projects page now also attempts to fetch a short README summary for each repo (first paragraph) and the repo's `homepage` field. If the `homepage` field exists it will be used as a "Live demo" link on the card.
+- Because unauthenticated GitHub API requests are rate-limited (60/hour/IP), you can provide a token to increase limits. Create a personal access token on GitHub with no scopes (public read only) and set it in an environment variable named `VITE_GITHUB_TOKEN` before running the dev server or build. Example (Linux/macOS):
+
+```bash
+export VITE_GITHUB_TOKEN=ghp_xxx...
+npm run dev
+```
+
+Or create a `.env` file in `react-portfolio/` with:
+
+```
+VITE_GITHUB_TOKEN=ghp_xxx...
+```
+
+The app will use the token automatically when present to fetch repo metadata and README content. If you don't provide a token the app will still work but may return only the placeholder data when rate-limited.
+
+TypeScript
+
+- I converted the app to a mixed TypeScript setup. New `.tsx` entry and component files were added. To run the type checker:
+
+```bash
+cd react-portfolio
+npm run typecheck
+```
+
+The project keeps `src/data/projects.js` as a JS data file for simplicity; components are typed minimally to keep the conversion focused and safe. If you'd like stricter types I'll tighten the interfaces next.
+
 CI / Deploy
 
 - I added a GitHub Actions workflow at `.github/workflows/ci.yml` (build + test) and `.github/workflows/pages.yml` (build + deploy to GitHub Pages). The deploy workflow uses the GitHub Pages actions and will publish the `react-portfolio/dist` folder when you push to the `main` branch.

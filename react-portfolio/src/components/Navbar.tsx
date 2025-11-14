@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function Navbar(){
+export default function Navbar(): JSX.Element{
   const [open, setOpen] = useState(false)
 
-  const NavItem = ({ to, icon, label, onClick }) => (
+  const NavItem = ({ to, icon, label, onClick }: {to: string, icon: string, label: string, onClick?: () => void}) => (
     <div className="nav-item" onClick={onClick}>
       <i className={icon} aria-hidden></i>
       <NavLink to={to} className={({isActive}) => isActive ? 'active' : ''}>{label}</NavLink>

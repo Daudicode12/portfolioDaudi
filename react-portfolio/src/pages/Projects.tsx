@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react'
 import projectsData from '../data/projects'
 import ProjectModal from '../components/ProjectModal'
 
-export default function Projects(){
-  const [projects, setProjects] = useState(projectsData)
-  const [modalProject, setModalProject] = useState(null)
+export default function Projects(): JSX.Element{
+  const [projects, setProjects] = useState<any[]>(projectsData)
+  const [modalProject, setModalProject] = useState<any|null>(null)
 
   useEffect(() => {
-    // Fetch lightweight metadata (stars, description, homepage) + a README summary
-    // Use optional VITE_GITHUB_TOKEN to authenticate requests (higher rate limits).
     const token = import.meta.env.VITE_GITHUB_TOKEN
 
     async function fetchMeta() {
@@ -20,22 +18,18 @@ export default function Projects(){
           if (!repoRes.ok) return p
           const repoJson = await repoRes.json()
 
-          // attempt to fetch the README as raw text
           let readmeSummary = null
           try {
             const readmeRes = await fetch(`https://api.github.com/repos/${p.repoSlug}/readme`, { headers: { ...headers, Accept: 'application/vnd.github.v3.raw' } })
             if (readmeRes.ok) {
               const raw = await readmeRes.text()
-              // create a short summary: first non-empty paragraph, trimmed to ~300 chars
-              const paragraphs = raw.split(/\n\n+/).map(s => s.trim()).filter(Boolean)
+              const paragraphs = raw.split(/\n\n+/).map((s: string) => s.trim()).filter(Boolean)
               if (paragraphs.length) {
                 const first = paragraphs[0].replace(/[#>*`]/g, '').replace(/\n/g, ' ').trim()
                 readmeSummary = first.length > 300 ? first.slice(0, 297) + '...' : first
               }
             }
-          } catch (err) {
-            // ignore README fetch errors
-          }
+          } catch (err) { }
 
           return {
             ...p,
