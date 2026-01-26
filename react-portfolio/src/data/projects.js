@@ -34,6 +34,18 @@ const projects = [
       '/images/placeholder3.svg',
       '/images/placeholder3-2.svg'
     ]
+  },
+  {
+    id: 4,
+    title: 'School Fee Payment System (Spring Boot)',
+    repoUrl: 'https://github.com/Daudicode12/school-payment-sysstem.git',
+    repoSlug: 'Daudicode12/school-payment-sysstem',
+    desc: 'A Spring Boot application for managing school fee payments.',
+    img: '/images/placeholder4.svg',
+    screenshots: [
+      '/images/placeholder4.svg',
+      '/images/placeholder4-2.svg'
+    ]
   }
 ]
 

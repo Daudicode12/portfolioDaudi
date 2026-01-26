@@ -24,7 +24,7 @@ export default function App() {
     },
     {
       title: 'Backend Architecture',
-      icon: <Server className="w-8 h-8" />,
+      icon: <Server className="w-12 h-12" />,
       color: 'from-red-500 to-pink-500',
       techs: ['Node.js', 'Express', 'Java', 'Spring Boot', 'RESTful APIs'],
       mastery: 88
@@ -216,12 +216,12 @@ export default function App() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skills.map((skill, index) => (
-              <div key={index} className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105">
-                <div className={`inline-block p-3 bg-gradient-to-r ${skill.color} rounded-lg mb-4`}>
+              <div key={index} className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-12 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105">
+                <div className={`inline-block p-12 bg-gradient-to-r ${skill.color} rounded-lg mb-4`}>
                   {skill.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{skill.title}</h3>
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-4 mb-6">
                   {skill.techs.map((tech, i) => (
                     <span key={i} className="px-3 py-1 bg-gray-700/50 rounded-full text-sm text-gray-300">
                       {tech}
