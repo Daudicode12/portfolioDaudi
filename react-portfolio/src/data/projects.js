@@ -46,6 +46,18 @@ const projects = [
       '/images/placeholder4.svg',
       '/images/placeholder4-2.svg'
     ]
+  },
+  {
+    id: 5,
+    title: 'Church Website',
+    repoUrl: 'https://github.com/Daudicode12/foundationWeb.git',
+    repoSlug: 'Daudicode12/foundationWeb',
+    desc: 'A website template for churches to share information and events.',
+    img: '/images/placeholder5.svg',
+    screenshots: [
+      '/images/placeholder5.svg',
+      '/images/placeholder5-2.svg'
+    ]
   }
 ]
 
