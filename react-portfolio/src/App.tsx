@@ -40,7 +40,7 @@ export default function App() {
       title: 'Database Systems',
       icon: <Database className="w-8 h-8" />,
       color: 'from-green-500 to-emerald-500',
-      techs: ['MySQL', 'MongoDB', 'PostgreSQL', 'Firebase'],
+      techs: ['MySQL', 'MongoDB', 'PostgreSQL', 'Firebase', 'supabase'],
       mastery: 82
     },
     {
