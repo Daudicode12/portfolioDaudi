@@ -192,7 +192,7 @@ export default function App() {
             </p>
             <div className="grid md:grid-cols-3 gap-4 mt-8">
               <div className="text-center p-4 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg">
-                <div className="text-3xl font-bold text-cyan-400">5+</div>
+                <div className="text-3xl font-bold text-cyan-400">3+</div>
                 <div className="text-gray-400">Years Coding</div>
               </div>
               <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg">
