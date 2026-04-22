@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { X, Github, ExternalLink } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/portfolioData';
 
@@ -44,10 +45,150 @@ const FilterButton = ({ label, isActive, onClick }) => (
   </motion.button>
 );
 
-// Get unique categories from projects
+// Get unique categories from projects (flattened from array structure)
 const getProjectCategories = () => {
-  const categories = new Set(projects.map(p => p.category));
+  const categories = new Set();
+  projects.forEach(p => {
+    const cats = Array.isArray(p.category) ? p.category : [p.category];
+    cats.forEach(cat => categories.add(cat));
+  });
   return ['All', ...Array.from(categories).sort()];
+};
+
+// Project detail modal component
+const ProjectModal = ({ project, isOpen, onClose }) => {
+  if (!project) return null;
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+        >
+          <motion.div
+            className="bg-slate-900/95 border border-neon-cyan/30 rounded-2xl max-w-2xl w-full backdrop-blur-xl p-8 max-h-[90vh] overflow-y-auto"
+            initial={{ scale: 0.8, y: 20 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0.8, y: 20 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <motion.button
+              onClick={onClose}
+              className="absolute top-4 right-4 p-2 rounded-lg hover:bg-neon-cyan/20 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <X size={20} className="text-neon-cyan" />
+            </motion.button>
+
+            {/* Header */}
+            <div className="mb-6">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent mb-2">
+                    {project.title}
+                  </h2>
+                  {project.featured && (
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-neon-cyan/20 border border-neon-cyan/50 text-neon-cyan text-xs font-semibold">
+                      ⭐ Featured Project
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-64 object-cover rounded-xl mb-4"
+                onError={(e) => {
+                  e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 400 300"%3E%3Crect fill="rgba(100,100,100,0.2)" width="400" height="300"/%3E%3C/svg%3E';
+                }}
+              />
+            </div>
+
+            {/* Description */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-slate-100 mb-2">Description</h3>
+              <p className="text-slate-300 leading-relaxed">
+                {project.fullDescription || project.description}
+              </p>
+            </div>
+
+            {/* Tech stack */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-slate-100 mb-3">Tech Stack</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.stack.map((tech) => (
+                  <motion.span
+                    key={tech}
+                    className={`
+                      text-xs px-4 py-2 rounded-full font-medium
+                      border backdrop-blur-sm
+                      ${
+                        project.featured
+                          ? 'border-neon-cyan/50 bg-neon-cyan/10 text-neon-cyan'
+                          : 'border-neon-blue/50 bg-neon-blue/10 text-neon-blue'
+                      }
+                    `}
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+
+            {/* Categories */}
+            {Array.isArray(project.category) && project.category.length > 0 && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-slate-100 mb-3">Categories</h3>
+                <div className="flex flex-wrap gap-2">
+                  {project.category.map((cat) => (
+                    <span
+                      key={cat}
+                      className="text-xs px-3 py-1 rounded-full font-semibold border border-slate-600 bg-slate-800/30 text-slate-300"
+                    >
+                      {cat}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Action buttons */}
+            <div className="flex gap-3">
+              {project.codeUrl && (
+                <motion.a
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`
+                    flex-1 inline-flex items-center justify-center gap-2
+                    px-4 py-3 rounded-lg font-semibold
+                    border transition-all duration-200
+                    ${
+                      project.featured
+                        ? 'border-neon-cyan/60 bg-gradient-to-r from-neon-cyan/20 to-neon-purple/20 text-neon-cyan hover:from-neon-cyan/30 hover:to-neon-purple/30'
+                        : 'border-neon-blue/60 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 text-neon-blue hover:from-neon-blue/30 hover:to-neon-purple/30'
+                    }
+                  `}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Github size={18} />
+                  <span>View on GitHub</span>
+                </motion.a>
+              )}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 };
 
 // Animated title component
@@ -77,7 +218,7 @@ const AnimatedTitle = () => (
       viewport={{ once: true }}
       transition={{ type: 'spring', stiffness: 80, damping: 20 }}
     >
-      Featured Projects
+      My Projects
     </motion.h2>
 
     <motion.p
@@ -87,7 +228,7 @@ const AnimatedTitle = () => (
       viewport={{ once: true }}
       transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
     >
-      Explore my most impactful work across web, fullstack, and IoT projects
+      Explore my work across web development, AI/ML, IoT, and enterprise solutions
     </motion.p>
   </motion.div>
 );
@@ -148,6 +289,7 @@ const BackgroundAnimation = () => {
 
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedProject, setSelectedProject] = useState(null);
   const sectionRef = useRef(null);
   const categories = getProjectCategories();
 
@@ -155,7 +297,10 @@ export default function ProjectsSection() {
   const filteredProjects =
     activeFilter === 'All'
       ? projects
-      : projects.filter(p => p.category === activeFilter);
+      : projects.filter(p => {
+          const cats = Array.isArray(p.category) ? p.category : [p.category];
+          return cats.includes(activeFilter);
+        });
 
   // Sort to put featured projects first
   const sortedProjects = [...filteredProjects].sort((a, b) => {
@@ -197,7 +342,7 @@ export default function ProjectsSection() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}
-            className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-max"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -207,13 +352,18 @@ export default function ProjectsSection() {
               sortedProjects.map((project, index) => (
                 <ProjectCard
                   key={project.id}
+                  id={project.id}
                   title={project.title}
                   description={project.description}
+                  fullDescription={project.fullDescription}
                   stack={project.stack}
                   image={project.image}
                   codeUrl={project.codeUrl}
+                  category={project.category}
+                  rating={project.rating}
                   featured={project.featured}
                   index={index}
+                  onOpenModal={() => setSelectedProject(project)}
                 />
               ))
             ) : (
@@ -256,6 +406,13 @@ export default function ProjectsSection() {
           ))}
         </motion.div>
       </div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }
