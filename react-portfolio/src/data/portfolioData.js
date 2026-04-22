@@ -19,10 +19,43 @@ export const stats = [
   { label: 'Core Technologies', value: '12+' },
 ];
 
+export const aboutContent = {
+  intro: "I am a full-stack developer passionate about building scalable web applications and intelligent systems that solve real-world problems.",
+  description: "With a strong foundation in both frontend and backend development, I specialize in crafting seamless digital experiences. My expertise spans React for dynamic frontend interfaces and Java (Spring Boot) / Node.js (Express) for robust backend systems. I'm proficient in designing and managing databases like PostgreSQL and MySQL, with a keen interest in building scalable architectures using microservices patterns. I'm passionate about emerging technologies including Machine Learning and IoT integration, with hands-on experience in projects like AgroVault that solve real-world challenges in agriculture and technology.",
+  cta: "I'm always open to collaborating on innovative projects and opportunities.",
+};
+
 export const aboutHighlights = [
-  'React-first frontend engineering with reusable architecture',
-  'API-driven products with maintainable backend integrations',
-  'A strong focus on UI motion, accessibility, and performance',
+  { 
+    title: 'Full-Stack Development',
+    icon: '⚡',
+    description: 'Frontend to backend, I build complete digital products.'
+  },
+  { 
+    title: 'API Design & Integration',
+    icon: '🔗',
+    description: 'Robust RESTful APIs and seamless integrations.'
+  },
+  { 
+    title: 'Microservices Architecture',
+    icon: '🏗️',
+    description: 'Scalable systems designed for growth.'
+  },
+  { 
+    title: 'Machine Learning & IoT',
+    icon: '🤖',
+    description: 'Intelligent systems for real-world problems.'
+  },
+  { 
+    title: 'Database Design',
+    icon: '💾',
+    description: 'Optimized data structures and queries.'
+  },
+  { 
+    title: 'Performance Optimization',
+    icon: '⚙️',
+    description: 'Fast, efficient, production-ready code.'
+  },
 ];
 
 export const skillsCategories = [
