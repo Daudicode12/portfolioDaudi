@@ -25,6 +25,76 @@ export const aboutHighlights = [
   'A strong focus on UI motion, accessibility, and performance',
 ];
 
+export const skillsCategories = [
+  {
+    id: 'backend',
+    name: 'Backend Development',
+    icon: '⚙️',
+    color: '#ff0080',
+    colorClass: 'neon-pink',
+    skills: [
+      { name: 'Java (Spring Boot)', level: 85, icon: '☕' },
+      { name: 'Node.js (Express)', level: 88, icon: '🟩' },
+    ],
+  },
+  {
+    id: 'frontend',
+    name: 'Frontend Development',
+    icon: '✨',
+    color: '#00ffff',
+    colorClass: 'neon-cyan',
+    skills: [
+      { name: 'React.js', level: 93, icon: '⚛️' },
+      { name: 'Modern JavaScript (ES6+)', level: 90, icon: '📜' },
+      { name: 'HTML5 & CSS3', level: 92, icon: '🎨' },
+    ],
+  },
+  {
+    id: 'databases',
+    name: 'Databases',
+    icon: '🗄️',
+    color: '#a65dff',
+    colorClass: 'neon-purple',
+    skills: [
+      { name: 'PostgreSQL', level: 86, icon: '🐘' },
+      { name: 'MySQL', level: 84, icon: '🐬' },
+    ],
+  },
+  {
+    id: 'api',
+    name: 'API & Integration',
+    icon: '🔌',
+    color: '#00ff80',
+    colorClass: 'neon-green',
+    skills: [
+      { name: 'REST API Development', level: 89, icon: '🔗' },
+      { name: 'API Integration', level: 87, icon: '🔀' },
+      { name: 'Postman Testing', level: 88, icon: '📮' },
+    ],
+  },
+  {
+    id: 'architecture',
+    name: 'Architecture & Systems',
+    icon: '🏗️',
+    color: '#ffff00',
+    colorClass: 'neon-yellow',
+    skills: [
+      { name: 'Microservices Architecture', level: 82, icon: '🧩' },
+    ],
+  },
+  {
+    id: 'emerging',
+    name: 'Emerging Technologies',
+    icon: '🚀',
+    color: '#3a7dff',
+    colorClass: 'neon-blue',
+    skills: [
+      { name: 'Machine Learning', level: 78, icon: '🤖' },
+      { name: 'IoT Integration', level: 75, icon: '📡' },
+    ],
+  },
+];
+
 export const skills = [
   { name: 'React', level: 93, color: 'var(--neon-cyan)' },
   { name: 'JavaScript', level: 90, color: 'var(--neon-blue)' },
@@ -36,40 +106,37 @@ export const skills = [
 
 export const projects = [
   {
-    title: 'Blood Connect System',
+    id: 1,
+    title: 'Foundation of Christ Church Website',
     description:
-      'Emergency donor matching platform that helps hospitals and patients connect in real time.',
-    stack: ['React', 'Node.js', 'MySQL', 'Socket.IO'],
+      'A modern website developed for a church to provide information, events, and community engagement.',
+    stack: ['React', 'HTML', 'CSS', 'JavaScript'],
     image: '/images/placeholder1.svg',
-    liveUrl: 'https://example.com',
-    codeUrl: 'https://github.com/Daudicode12/blood-donation-with-next.js.git',
+    codeUrl: 'https://github.com/Daudicode12/foundationWeb.git',
+    category: 'Web',
+    featured: false,
   },
   {
-    title: 'CropCare AI',
+    id: 2,
+    title: 'AgroVault',
     description:
-      'AI-based diagnosis workflow for crop diseases with recommendation and alert capabilities.',
-    stack: ['Flutter', 'TensorFlow', 'Firebase'],
+      'A smart agriculture storage monitoring system that integrates IoT and machine learning to monitor conditions and reduce post-harvest losses.',
+    stack: ['React', 'Node.js', 'Machine Learning', 'IoT Integration'],
     image: '/images/placeholder2.svg',
-    liveUrl: 'https://example.com',
-    codeUrl: 'https://github.com/Daudicode12/plant-care.git',
+    codeUrl: 'https://github.com/Raxcore-dev/AgroVault.git',
+    category: 'IoT',
+    featured: true,
   },
   {
-    title: 'Agri Connect',
+    id: 3,
+    title: 'School Fee Management System',
     description:
-      'Marketplace platform helping farmers connect directly with buyers and logistics services.',
-    stack: ['React', 'Express', 'MongoDB'],
+      'A web-based system for managing school fee payments, tracking transactions, and improving financial transparency.',
+    stack: ['React', 'Node.js', 'MySQL'],
     image: '/images/placeholder3.svg',
-    liveUrl: 'https://example.com',
-    codeUrl: 'https://github.com/Daudicode12',
-  },
-  {
-    title: 'Quantum Chatbot AI',
-    description:
-      'Conversational assistant with context memory and multilingual support for digital products.',
-    stack: ['Node.js', 'NLP', 'WebSocket'],
-    image: '/images/placeholder1-2.svg',
-    liveUrl: 'https://example.com',
-    codeUrl: 'https://github.com/Daudicode12',
+    codeUrl: 'https://github.com/Daudicode12/school-payment-sysstem.git',
+    category: 'Fullstack',
+    featured: false,
   },
 ];
 
