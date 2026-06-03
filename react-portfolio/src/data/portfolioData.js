@@ -228,6 +228,7 @@ export const projects = [
     image: 'https://images.unsplash.com/photo-1569718974246-7b898eae87d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2FyZWhvdXNlJTIwZmFybSUyMGhhcnZlc3QlMjBzdG9yYWdlfGVufDB8fDB8fHww',
     codeUrl: 'https://github.com/Raxcore-dev/AgroVault.git',
     category: ['AI', 'IOT', 'Agriculture'],
+    websiteUrl: 'https://agrovault.raxcore/',
     featured: false,
     rating: 4.6,
   },
