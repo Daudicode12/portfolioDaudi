@@ -14,7 +14,7 @@ export const heroData = {
 };
 
 export const stats = [
-  { label: 'Years Building', value: '5+' },
+  { label: 'Years Building', value: '3+' },
   { label: 'Projects Delivered', value: '20+' },
   { label: 'Core Technologies', value: '12+' },
 ];
@@ -138,20 +138,20 @@ export const skills = [
 ];
 
 export const projects = [
+  // {
+  //   id: 1,
+  //   title: 'AgroVault',
+  //   description: 'IoT-powered smart storage monitoring system using machine learning to reduce post-harvest losses.',
+  //   fullDescription: 'AgroVault is an innovative agriculture technology solution that combines IoT sensors with advanced machine learning algorithms to monitor storage conditions in real-time. It helps farmers and agricultural businesses reduce post-harvest losses by providing actionable insights on temperature, humidity, and other critical environmental factors.',
+  //   stack: ['React', 'Node.js (Express)', 'Machine Learning', 'IoT Integration'],
+  //   image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=600&fit=crop',
+  //   codeUrl: 'https://github.com/Raxcore-dev/AgroVault.git',
+  //   category: ['AI', 'IoT'],
+  //   featured: true,
+  //   rating: 4.8,
+  // },
   {
     id: 1,
-    title: 'AgroVault',
-    description: 'IoT-powered smart storage monitoring system using machine learning to reduce post-harvest losses.',
-    fullDescription: 'AgroVault is an innovative agriculture technology solution that combines IoT sensors with advanced machine learning algorithms to monitor storage conditions in real-time. It helps farmers and agricultural businesses reduce post-harvest losses by providing actionable insights on temperature, humidity, and other critical environmental factors.',
-    stack: ['React', 'Node.js (Express)', 'Machine Learning', 'IoT Integration'],
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=600&fit=crop',
-    codeUrl: 'https://github.com/Raxcore-dev/AgroVault.git',
-    category: ['AI', 'IoT'],
-    featured: true,
-    rating: 4.8,
-  },
-  {
-    id: 2,
     title: 'Crop Care System',
     description: 'A system designed to monitor crop health and provide actionable insights for farmers.',
     fullDescription: 'Crop Care System is an intelligent monitoring platform that uses computer vision and machine learning to detect crop diseases and health issues early. Farmers receive real-time alerts and recommendations to optimize their crop yield and reduce losses.',
@@ -162,7 +162,7 @@ export const projects = [
     rating: 4.6,
   },
   {
-    id: 3,
+    id: 2,
     title: 'Crop Recommendation System',
     description: 'A machine learning-based system that recommends the best crops to plant based on environmental conditions.',
     fullDescription: 'This intelligent recommendation engine analyzes soil quality, climate data, weather patterns, and historical yields to suggest optimal crops for any given location. It helps farmers make data-driven decisions to maximize profitability and sustainability.',
@@ -173,7 +173,7 @@ export const projects = [
     rating: 4.5,
   },
   {
-    id: 4,
+    id: 3,
     title: 'Blood Connect',
     description: 'A web platform that connects blood donors with recipients to improve emergency response and save lives.',
     fullDescription: 'Blood Connect is a critical healthcare platform that revolutionizes blood donation by creating direct connections between donors and recipients. During emergencies, hospitals can quickly locate compatible donors, and donors can find nearby patients in need.',
@@ -184,7 +184,7 @@ export const projects = [
     rating: 4.7,
   },
   {
-    id: 5,
+    id: 4,
     title: 'Foundation of Christ Church Website',
     description: 'A modern website for church communication, events, and community engagement.',
     fullDescription: 'Built for Foundation of Christ Church, this responsive website provides a platform for church members and visitors to access service times, events, sermons, and community information. It features an elegant design that reflects the church\'s values and mission.',
@@ -196,7 +196,7 @@ export const projects = [
     rating: 4.4,
   },
   {
-    id: 6,
+    id: 5,
     title: 'School Fee Management System',
     description: 'A full-stack system for managing school payments and tracking financial records.',
     fullDescription: 'This comprehensive school fee management system streamlines payment processing, tracks financial records, and provides detailed analytics for school administrators. It supports multiple payment methods and generates automated receipts and reports.',
@@ -207,6 +207,31 @@ export const projects = [
     featured: false,
     rating: 4.6,
   },
+    {
+    id: 6,
+    title: 'Shoe store',
+    description: 'A full-stack system for managing shoe collections and tracking financial records.',
+    fullDescription: 'This comprehensive shoe collection system streamlines payment processing, tracks financial records, and provides detailed analytics for bussines person. It supports multiple payment methods and generates automated receipts and reports.',
+    stack: ['React', 'Java (Spring boot)', 'MySQL/PostgreSQL'],
+    image: 'https://images.unsplash.com/photo-1742766246350-4167619a9906?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    codeUrl: 'https://github.com/Daudicode12/Shoestore.git',
+    category: ['Fullstack', 'Business'],
+    featured: false,
+    rating: 4.6,
+  },
+      {
+    id: 7,
+    title: 'AgroVault',
+    description: 'IoT-powered smart storage monitoring system using machine learning to reduce post-harvest losses',
+    fullDescription: 'AgroVault is an innovative agriculture technology solution that combines IoT sensors with advanced machine learning algorithms to monitor storage conditions in real-time. It helps farmers and agricultural businesses reduce post-harvest losses by providing actionable insights on temperature, humidity, and other critical environmental factor.',
+    stack: ['React', 'Next.js', 'Neon/PostgreSQL'],
+    image: 'https://images.unsplash.com/photo-1569718974246-7b898eae87d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2FyZWhvdXNlJTIwZmFybSUyMGhhcnZlc3QlMjBzdG9yYWdlfGVufDB8fDB8fHww',
+    codeUrl: 'https://github.com/Raxcore-dev/AgroVault.git',
+    category: ['AI', 'IOT', 'Agriculture'],
+    featured: false,
+    rating: 4.6,
+  },
+
 ];
 
 export const socialLinks = [
