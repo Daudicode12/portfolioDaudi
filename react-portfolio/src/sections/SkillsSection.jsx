@@ -623,7 +623,7 @@ export default function SkillsSection() {
               whileHover={{ scale: 1.05, borderColor: 'rgba(0,255,255,0.5)' }}
             >
               <motion.div
-                className="text-3xl font-bold bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent"
+                className="text-3xl font-bold bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
