@@ -36,7 +36,7 @@ export default function HeroSection() {
           className="mb-4 inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-1 text-xs uppercase tracking-[0.25em] text-cyan-200 md:text-sm"
           variants={itemVariants}
         >
-          Portfolio 2026
+         The Portfolio
         </motion.p>
         <motion.h1 className="hero-title" variants={itemVariants}>
           {heroData.name}
