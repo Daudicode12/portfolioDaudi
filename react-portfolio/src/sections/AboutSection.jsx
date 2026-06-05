@@ -250,7 +250,7 @@ export default function AboutSection() {
         >
           {/* Intro with typing animation */}
           <motion.p
-            className="text-xl md:text-2xl font-semibold mb-8 bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent leading-relaxed"
+            className="text-xl md:text-2xl font-semibold mb-8 bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -345,7 +345,7 @@ export default function AboutSection() {
                 }}
                 whileHover={{ scale: 1.08, y: -4 }}
               >
-                <motion.p className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent mb-2">
+                <motion.p className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text mb-2">
                   {stat.value}
                 </motion.p>
                 <p className="text-sm uppercase tracking-widest text-slate-400 font-semibold">
