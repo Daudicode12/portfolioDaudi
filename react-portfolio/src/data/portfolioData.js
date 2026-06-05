@@ -7,8 +7,8 @@ export const navItems = [
 ];
 
 export const heroData = {
-  name: 'David Onyango',
-  tagline: 'Frontend Developer | Building Modern Web Experiences',
+  name: 'David Odipo',
+  tagline: 'Full-stack Developer | Building Modern Web Experiences which meets user needs and business goals.',
   subtitle:
     'I create immersive, high-performance digital products with clean architecture and futuristic user experiences.',
 };
