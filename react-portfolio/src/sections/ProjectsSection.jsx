@@ -398,7 +398,7 @@ export default function ProjectsSection() {
               className="text-center p-4 rounded-xl border border-slate-700/50 bg-slate-900/30 backdrop-blur-sm hover:border-neon-cyan/40 transition-all duration-300"
               whileHover={{ y: -4 }}
             >
-              <motion.p className="text-3xl font-bold bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent">
+              <motion.p className="text-3xl font-bold bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text">
                 {stat.value}
               </motion.p>
               <p className="text-sm text-slate-400 mt-1">{stat.label}</p>
