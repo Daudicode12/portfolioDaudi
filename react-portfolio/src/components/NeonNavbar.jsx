@@ -130,7 +130,7 @@ export default function NeonNavbar({ activeSection, isMenuOpen, scrolled, onTogg
           animate={{ opacity: 1, x: 0 }}
           transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         >
-          {'<DO/>'}
+          {'Daudi'}
         </motion.a>
 
         {/* Navigation links - Desktop */}
